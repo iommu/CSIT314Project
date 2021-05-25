@@ -20,4 +20,4 @@ class Wolframalpha:
     def get_pod(self, search: dict, key: str) -> str:
         for pod in search:
             if pod['title'] == key:
-                return pod['subpods'][0]['plaintext']
+                return pod['subpods']

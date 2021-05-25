@@ -1,2 +1,19 @@
 import random
 # This file generates a "random" string to passes it to the assert file
+
+# Random generators
+def rand_name():
+    return random.choice([
+            "Harriet Tubman", 
+            "Marvin Gaye"
+        ])
+
+def rand_int_range(start=0, end=200):
+    return random.randint(start, end)
+
+# String generators
+def dob_string_gen(name):
+    return "date of birth of {}".format(name)
+
+def quadratic_gen(a,b,c):
+    return "{}x^2 + {}x + {} = 0".format(a,b,c)
