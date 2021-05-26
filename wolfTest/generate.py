@@ -38,7 +38,7 @@ def pi_dig_gen(a=100,b=20,c=50):
             
 
 
-#works in similar way to rand_name and is easier to validate. can be validated with eith hexadecimal form or ineger. i think the integer is easier but i coud be wrong.
+#works in similar way to the fist one"
 # /
 def hash_gen
     return random.choice([
