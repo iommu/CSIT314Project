@@ -36,6 +36,12 @@ def truth_table_gen():
     return"truth table p implies q"
     return"truth table p and q"
     
+  #checks for the given digits of pi
+
+def pi_dig_gen(a=100,b=20,c=50):
+    return "pi {}digits".format(a,b,c)
+            
+
 
 #works in similar way to rand_name and is easier to validate. can be validated with eith hexadecimal form or ineger. i think the integer is easier but i coud be wrong.
 # /
