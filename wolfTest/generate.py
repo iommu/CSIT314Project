@@ -30,11 +30,6 @@ def solve_gen():
 #this might be a bit difficult. try it if u can otherwise just leave it. 
 def derivative_gen():
     return"d/dx {}x^2+{}y^4, d/dy x^2 y^4".format(a,b)
-
-# this is easy because formula = p and q and p implies q       
-def truth_table_gen():
-    return"truth table p implies q"
-    return"truth table p and q"
     
   #checks for the given digits of pi
 
