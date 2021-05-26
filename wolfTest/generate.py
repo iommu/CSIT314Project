@@ -20,11 +20,11 @@ def quadratic_gen(a,b,c):
 ##################################################################
 ################## new case ######################################
  # same as what alex did. 
-def math_gen(a,b,c,d):
+def math_gen(a,b,c):
     return "({}+{}-{})/{}".format(a,b,c,b)
     
     # very similar to quadratic
-def solve_gen():
+def solve_gen(a,b,c,d,e):
     return "{}x^2 + {}x = {} - {}x^3".format(a,b,c,d)
     return" factor {}x^5 - {}x^4 + {}x^4 - {}x^2 + {}x^3 - {}".format(a,b,c,d,e)
 #this might be a bit difficult. try it if u can otherwise just leave it. 
