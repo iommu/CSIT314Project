@@ -1,7 +1,7 @@
 # This file takes the generates string/dict from generate.py and runs it
 # through api.py to recieve wolframs' output. It then calculates the supposed
 # answer to the question (or looks it up in a db is the answer is static) then
-#install pip install truth-table-generator
+
 # checks it against the api.py's output
 from sympy import symbols, solve
 from sympy.parsing.sympy_parser import (
@@ -10,7 +10,7 @@ from sympy.parsing.sympy_parser import (
     implicit_multiplication,
     convert_xor,
 )
-import ttg
+
 
 # Solution generators
 
