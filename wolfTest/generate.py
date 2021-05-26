@@ -17,3 +17,19 @@ def dob_string_gen(name):
 
 def quadratic_gen(a,b,c):
     return "{}x^2 + {}x + {} = 0".format(a,b,c)
+
+import random 
+def quadratic_gen(a,b,c):
+    return "{}x^2 + {}x + {} = 0".format(a,b,c)
+def math():
+       return "(a+d-c)/b".format(a,b,c)
+def solve():
+    return "{}x^2 + {}x = {} - {}x^3".format(a,b,c,d)
+    return" factor {}x^5 - {}x^4 + {}x^4 - {}x^2 + {}x^3 - {}".format(a,b,c,d,e)
+
+def derivative():
+    return"d/dx {}x^2+{}y^4, d/dy x^2 y^4".format(a,b)
+            
+def truth_table_gen():
+    return"truth table p and q xor r and s"
+return"logic circuit (~p or ~q) and (r xor s)"
