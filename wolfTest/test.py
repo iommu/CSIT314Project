@@ -3,6 +3,7 @@
 # answer to the question (or looks it up in a db is the answer is static) then
 # checks it against the api.py's output
 
+import math
 from sympy import symbols, solve
 from sympy.parsing.sympy_parser import (
     parse_expr,
@@ -29,9 +30,24 @@ def quadratic_check(a, b, c):
     return solve(expr)  # example [-1 - sqrt(2)*I, -1 + sqrt()*I], a = 2, b = 4, c = 6
 
 def math_check(a,b,c,d):
-    expr = (a + d - c) / b
-    return expr         #example 1.0, a = 2, b = 4, c = 6, d = 8
+    expr = (a + b - c) / d
+    return expr         #example 1.0, a = 2, b = 8, c = 6, d = 4
 
+def geometry_check(s):
+    s = s.split()
+    if s[0] == "pi":
+        #print out pi to x digits
+        x = int(s[1])
+        return round(2*acos(0.0),x)
+    #check if converting to radians
+    elif s[0] == "convert" and s[4] == "radians":
+        x = float(s[1])
+        return x * math.pi/180
+    #check if converting to degrees
+    elif s[0] == "convert" and s[4] == "degrees":
+        x = float(s[1])
+        return x * 180 / math.pi
+    return 0
 
 def truth_table_check(expr, inputs=2):
     #assuming 2 variables p and q always (can change later)
