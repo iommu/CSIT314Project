@@ -21,8 +21,8 @@ def quadratic_gen(a, b, c):
 ##################################################################
 ################## new case ######################################
  # same as what alex did. 
-def math_gen(a, b, c):
-    return "({}+{}-{})/{}".format(a, b, c)
+def math_gen(a, b, c, d):
+    return "({}+{}-{})/{}".format(a, b, c, d)
     
     # very similar to quadratic
 def solve_gen(a, b, c, d, e):
