@@ -33,8 +33,9 @@ def derivative_gen():
     
   #checks for the given digits of pi
 
-def pi_dig_gen(a=100,b=20,c=50):
+def geometry_gen(a=100,b=20,c=50):
     return "pi {}digits".format(a,b,c)
+    return "convert {} degree to radian".format(a,b,c)
             
 
 
