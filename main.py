@@ -43,7 +43,19 @@ class TestWA(unittest.TestCase):
             if same == False:
                 break
         self.assertTrue(same)
-
+   
+    # python main.py TestWA.test_math
+    def test_math(self):
+         # Generate random values
+         a = generate.rand_int_range(0, 100)
+         b = generate.rand_int_range(0, 100)
+         c = generate.rand_int_range(0, 100)
+         # Pass random values to known solution generator
+         result_test = test.math_check(a, b, c)
+         query = generate.test_gen(a, b, c)
+         result_wolf = self.api.search(query)
+        
+    
 
 if __name__ == "__main__":
     unittest.main()
