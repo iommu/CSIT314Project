@@ -30,6 +30,7 @@ def derivative_gen():
 def truth_table_gen():
     return"truth table p and q xor r and s"
     return"simplify p && (q xor r) && s"
+    return"simplify p not r&& (r xor s) xor q"
 
 def logic_gen():
     return"logic circuit (~p or ~q) and (r xor s)"
