@@ -17,10 +17,7 @@ def dob_string_gen(name):
 
 def quadratic_gen(a,b,c):
     return "{}x^2 + {}x + {} = 0".format(a,b,c)
-
-import random 
-def quadratic_gen(a,b,c):
-    return "{}x^2 + {}x + {} = 0".format(a,b,c)
+ 
 def math():
        return "(a+d-c)/b".format(a,b,c)
 def solve():
@@ -32,4 +29,7 @@ def derivative():
             
 def truth_table_gen():
     return"truth table p and q xor r and s"
-return"logic circuit (~p or ~q) and (r xor s)"
+
+def logic_gen():
+    return"logic circuit (~p or ~q) and (r xor s)"
+
