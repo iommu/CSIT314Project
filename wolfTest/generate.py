@@ -20,8 +20,8 @@ def quadratic_gen(a,b,c):
 ##################################################################
 ################## new case ######################################
  # same as what alex did. 
-def math_gen():
-       return "(a+d-c)/b".format(a,b,c)
+def math_gen(a,b,c,d):
+    return "({}+{}-{})/{}".format(a,b,c,b)
     
     # very similar to quadratic
 def solve_gen():
@@ -34,18 +34,17 @@ def derivative_gen():
   #checks for the given digits of pi
 
 def geometry_gen(a=100,b=20,c=50):
-    return "pi {}digits".format(a,b,c)
-    return "convert {} degree to radian".format(a,b,c)
+    return "pi {} digits".format(a)
+    return "convert {} degree to radian".format(a)
             
 
 
 #works in similar way to the fist one"
 # /
-def hash_gen
+def hash_gen():
     return random.choice([
             "SHA1 Hi, i love computer science",
-            "MD5 HELLO THERE I AM MD5!"
-            "CRC32 The quick brown fox jumps over the lazy dog"
-        
+            "MD5 HELLO THERE I AM MD5!",
+            "CRC32 The quick brown fox jumps over the lazy dog",
         ])
 
