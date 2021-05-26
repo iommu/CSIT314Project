@@ -17,21 +17,33 @@ def dob_string_gen(name):
 
 def quadratic_gen(a,b,c):
     return "{}x^2 + {}x + {} = 0".format(a,b,c)
- 
+##################################################################
+################## new case ######################################
+ # same as what alex did. 
 def math_gen():
        return "(a+d-c)/b".format(a,b,c)
+    
+    # very similar to quadratic
 def solve_gen():
     return "{}x^2 + {}x = {} - {}x^3".format(a,b,c,d)
     return" factor {}x^5 - {}x^4 + {}x^4 - {}x^2 + {}x^3 - {}".format(a,b,c,d,e)
-
+#this might be a bit difficult. try it if u can otherwise just leave it. 
 def derivative_gen():
     return"d/dx {}x^2+{}y^4, d/dy x^2 y^4".format(a,b)
-            
-def truth_table_gen():
-    return"truth table p and q xor r and s"
-    return"simplify p && (q xor r) && s"
-    return"simplify p not r&& (r xor s) xor q"
 
-def logic_gen():
-    return"logic circuit (~p or ~q) and (r xor s)"
+# this is easy because formula = p and q and p implies q       
+def truth_table_gen():
+    return"truth table p implies q"
+    return"truth table p and q"
+    
+
+#works in similar way to rand_name and is easier to validate. can be validated with eith hexadecimal form or ineger. i think the integer is easier but i coud be wrong.
+# /
+def hash_gen
+    return random.choice([
+            "SHA1 Hi, i love computer science",
+            "MD5 HELLO THERE I AM MD5!"
+            "CRC32 The quick brown fox jumps over the lazy dog"
+        
+        ])
 
