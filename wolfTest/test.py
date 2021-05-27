@@ -3,8 +3,8 @@
 # answer to the question (or looks it up in a db is the answer is static) then
 # checks it against the api.py's output
 
-import math
-from sympy import symbols, solve
+import math, hashlib, zlib
+from sympy import symbols, solve, factor
 from sympy.parsing.sympy_parser import (
     parse_expr,
     standard_transformations,
@@ -26,13 +26,31 @@ def dob_check(name):
 
 def quadratic_check(a, b, c):
     x = symbols("x")
-    expr = a * x ** 2 + b * x + c
+    expr = a * x**2 + b * x + c
     return solve(expr)  # example [-1 - sqrt(2)*I, -1 + sqrt()*I], a = 2, b = 4, c = 6
 
-def math_check(a,b,c,d):
+def math_check(a, b, c, d):
     expr = (a + b - c) / d
     return expr         #example 1.0, a = 2, b = 8, c = 6, d = 4
 
+def factor_check(a, b, c, d, e, f):
+    x = symbols("x")
+    expr = a * x**5 - b * x**4 + c * x**4 - d * x**2 + e * x**3 - f
+    return factor(expr)
+
+def hash_check(s):
+    # encode string with 3 different has methods. Will return encoded string in hexadecimal form
+    s = s.split(' ', 1)
+    if s[0] == "SHA1":
+        return hashlib.sha1(s[1].encode()).hexdigest()
+    elif s[0] == "MD5":
+        return hashlib.md5(s[1].encode()).hexdigest()
+    elif s[0] == "CRC32":
+        return hex(zlib.crc32(str.encode(s[1])))
+    else:
+        print("Hash method undefined")
+        return 0
+    
 def geometry_check(s):
     s = s.split()
     if s[0] == "pi":
