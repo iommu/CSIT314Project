@@ -46,7 +46,7 @@ def hash_gen():
             "MD5 HELLO THERE I AM MD5!",
             "CRC32 The quick brown fox jumps over the lazy dog",
         ])
-
+# It will ask for first and second number and add them together
 def sum(a, b):
     return (a + b)
 
