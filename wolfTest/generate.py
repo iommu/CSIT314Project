@@ -31,7 +31,7 @@ def solve_gen(a, b, c, d, e):
 
 #this might be a bit difficult. try it if u can otherwise just leave it. 
 def derivative_gen():
-    return"d/dx {}x^2+{}y^4, d/dy x^2 y^4".format()
+    return"d/dx {}x^2y^4, d/dy x^2{}y^4".format()
     
   #checks for the given digits of pi
 def geometry_gen(a=100,b=20,c=50):
