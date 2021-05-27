@@ -29,7 +29,7 @@ def solve_gen(a, b, c, d):
     return "{}x^2 + {}x = {} - {}x^3".format(a, b, c, d)
  
 def factor_gen(a, b, c, d, e, f):    
-    return "factor {}x^5 - {}x^4 + {}x^4 - {}x^2 + {}x^3 - {}".format(a, b, c, d, e)
+    return "factor {}x^5 - {}x^4 + {}x^4 - {}x^2 + {}x^3 - {}".format(a, b, c, d, e, f)
 
 #this might be a bit difficult. try it if u can otherwise just leave it. 
 def derivative_gen(a, b):
