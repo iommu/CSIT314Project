@@ -30,8 +30,8 @@ def solve_gen(a, b, c, d, e):
     return "factor {}x^5 - {}x^4 + {}x^4 - {}x^2 + {}x^3 - {}".format(a, b, c, d, e)
 
 #this might be a bit difficult. try it if u can otherwise just leave it. 
-def derivative_gen():
-    return"d/dx {}x^2y^4, d/dy x^2{}y^4".format()
+def derivative_gen(a, b):
+    return"d/dx {}x^2+y^4, d/dy {}x^2y^4".format(a, b)
     
   #checks for the given digits of pi
 def geometry_gen(a=100,b=20,c=50):
