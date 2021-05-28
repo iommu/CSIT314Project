@@ -55,6 +55,21 @@ class TestWA(unittest.TestCase):
          result_test = test.math_check(a, b, c, d)
          query = generate.test_gen(a, b, c, d)
          result_wolf = self.api.search(query)
+      
+    # python main.py TestWA.test_factor
+    def test_factor(self):
+         # Generate random values
+         a = generate.rand_int_range(0, 20)
+         b = generate.rand_int_range(0, 20)
+         c = generate.rand_int_range(0, 20)
+         d = generate.rand_int_range(0, 20)
+         e = generate.rand_int_range(0, 20)
+         f = generate.rand_int_range(0, 20)
+         # Pass random values to known solution generator
+         result_test = test.factor_check(a, b, c, d, e, f)
+         query = generate.factor_gen(a, b, c, d, e, f)
+         result_wolf = self.api.search(query)
+    
         
     
 
