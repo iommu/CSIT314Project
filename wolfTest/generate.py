@@ -5,7 +5,13 @@ import random
 def rand_name():
     return random.choice([
             "Harriet Tubman", 
-            "Marvin Gaye"
+            "Marvin Gaye",
+            "Charlemagne",
+            "Galileo Galilei",
+            "Warren Buffett",
+            "Tom Hanks",
+            "Ferdinand Magellan",
+            "Wiley Post"
         ])
 
 def rand_int_range(start=0, end=200):
