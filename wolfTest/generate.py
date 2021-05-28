@@ -54,12 +54,10 @@ def hash_gen():
             "MD5 HELLO THERE I AM MD5!",
             "CRC32 The quick brown fox jumps over the lazy dog",
         ])
-# It will ask for first and second number and add them together
+# Very simple equation 
 def sum(a, b):
-    return (a + b)
+    return f"{a} + {b} "
 
-a = int(input('Enter 1st number: '))
-b = int(input('Enter 2nd number: '))
 
 
 
