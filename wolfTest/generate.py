@@ -108,4 +108,7 @@ def is_palindrome(num):
         return num
     else:
         return False
+    
+def double(L):
+    return [x*2 for x in L]
 
