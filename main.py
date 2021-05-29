@@ -78,6 +78,9 @@ class TestWA(unittest.TestCase):
         result_test = test.math_check(a, b, c, d)
         query = generate.math_gen(a, b, c, d)
         result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Exact result")[0]['plaintext']
+        result_wolf = eval(result_wolf)
+        self.assertEqual(result_test, result_wolf)
 
     # python main.py TestWA.test_factor
     def test_factor(self):
