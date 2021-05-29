@@ -97,9 +97,38 @@ class TestWA(unittest.TestCase):
     def test_deg2rad(self):
         # Generate random values
         deg = generate.rand_float_range(-180, 180)
-        result_test = test.deg2rad_check(a)
-        query = generate.geometry_gen(a)
+        result_test = test.deg2rad_check(deg)
+        query = generate.deg2rad_gen(deg)
         result_wolf = self.api.search(query)
+
+    # python main.pt TestWA.test_solve
+    def test_solve(self):
+        # Generate random values
+        a = generate.rand_int_range(0, 10)
+        b = generate.rand_int_range(0, 10)
+        c = generate.rand_int_range(0, 10)
+        d = generate.rand_int_range(0, 10)
+        result_test = test.solve_check(a)
+        query = generate.solve_gen()
+        result_wolf = self.api.search(query)
+    
+    def test_sum(self):
+        # Generate random values
+        a = generate.rand_int_range(0, 100)
+        b = generate.rand_int_range(0, 100)
+        result_test = test.sum_check(a, b)
+        query = generate.sum_gen(a, b)
+        result_wolf = self.api.search(query)
+
+    def test_derivative(self):
+        # Generate random values
+        a = generate.rand_int_range(0, 10)
+        b = generate.rand_int_range(0, 10)
+        c = generate.rand_int_range(0, 10)
+        result_test = test.derivative_check(a, b, c)
+        query = generate.derivative_gen(a, b, c)
+        result_wolf = self.api.search(query)
+
 
 if __name__ == "__main__":
     unittest.main()

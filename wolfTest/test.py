@@ -5,7 +5,7 @@
 
 import math, hashlib, zlib
 import itertools
-from sympy import symbols, solve, factor
+from sympy import symbols, solve, factor, diff
 from sympy.parsing.sympy_parser import (
     parse_expr,
     standard_transformations,
@@ -21,8 +21,14 @@ from sympy.parsing.sympy_parser import (
 def dob_check(name):
     # Dict can be indexes by a string, i.e. the name in this case
     dob_dict = {
-        "Harriet Tubman": "March 1822",
-        "Marvin Gaye": "Sunday, April 2, 1939",
+        "Harriet Tubman":"March 1822", 
+        "Marvin Gaye":"Sunday, April 2, 1939",
+        "Charlemagne":"747 AD",
+        "Galileo Galilei":"",
+        "Warren Buffett":"Saturday, August 30, 1930",
+        "Tom Hanks":"Monday, July 9, 1956",
+        "Ferdinand Magellan":"1480",
+        "Wiley Post":"Tuesday, November 22, 1898"
     }
     return dob_dict[name]
 
@@ -57,23 +63,31 @@ def hash_check(s):
     hex_str = ' '.join(hash_hex[i:i+4] for i in range(0,len(hash_hex),4)) # add space every 4 hex digits
     return "integer form | {}\nhexadecimal form | {}".format(hash_int, hex_str)
     
+############################# Should work #############################
+
+def deg2rad_check(degrees):
+    radians = degrees * math.pi / 180
+    return radians
+
+def pie_check(length):
+    return round(2*acos(0.0),length)
+
+def sum_check(a, b):
+    return (a + b)
+
+def derivative_check(a, b, c):
+    x = symbols("x")
+    expr = a * x**4 + b * x**3 + c * x
+    answer = diff(expr, x)
+    return answer
+
 ############################# IN PROGRESS #############################
-    
-def geometry_check(s):
-    s = s.split()
-    if s[0] == "pi":
-        #print out pi to x digits
-        x = int(s[1])
-        return round(2*acos(0.0),x)
-    #check if converting to radians
-    elif s[0] == "convert" and s[4] == "radians":
-        x = float(s[1])
-        return x * math.pi/180
-    #check if converting to degrees
-    elif s[0] == "convert" and s[4] == "degrees":
-        x = float(s[1])
-        return x * 180 / math.pi
-    return 0
+
+def solve_check(a, b, c, d):
+    x = symbols("x")
+    eq1 = a * x**2 + b*x - c + d * x**3
+    answer = solve(eq1)
+    return answer
 
 
 def truth_table_check(expr, num_letters):
