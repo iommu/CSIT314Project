@@ -1,4 +1,5 @@
 import random
+import boolean
 # This file generates a "random" string to passes it to the assert file
 
 ############################# WORKING #############################
@@ -23,12 +24,27 @@ def rand_int_range(start=0, end=200):
 def rand_float_range(start=-360, end=360):
     return round(random.uniform(start, end), 1)
 
+def rand_logic(letters_int):
+    letters = ['q', 'r', 's', 't', 'u', 'v'] # std array of logic letters
+    logic = ['and', 'or', 'xor']
+    if letters_int > len(letters):
+        raise RuntimeError('Too many letters, max {}'.format(len(letters)))
+    output = ""
+    for letter in letters[:letters_int-1]:
+        not_rand = random.choices(["not ",""], weights=[1,5], k=1)[0] # 1 in 5 chance for not
+        output += "{}{} {} ".format(not_rand, letter, random.choice(logic))
+    output += letters[letters_int-1]
+    return output
+
 # String generators
 def dob_string_gen(name):
     return "date of birth of {}".format(name)
 
 def quadratic_gen(a, b, c):
     return "{}x^2 + {}x + {} = 0".format(a, b, c)
+
+def truth_table_gen(logic):
+    return "truth table {}".format(logic)
 
 ############################# IN PROGRESS #############################
 
@@ -66,8 +82,4 @@ def hash_gen():
 # Very simple equation 
 def sum(a, b):
     return f"{a} + {b} "
-
-
-
-
 
