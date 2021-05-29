@@ -43,7 +43,17 @@ class TestWA(unittest.TestCase):
             if same == False:
                 break
         self.assertTrue(same)
-   
+    
+    # python main.py TestWA.test_hash
+    def test_hash(self):
+        query = generate.hash_gen() # should have input for random string
+        result_test = test.hash_check(query)
+        result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Message digest")[0]['plaintext']
+        # example output "integer form | 1095738169\nhexadecimal form | 414f a339"
+        # Test both equal
+        self.assertEqual(result_test, result_wolf)
+
     # python main.py TestWA.test_math
     def test_math(self):
          # Generate random values

@@ -43,15 +43,18 @@ def factor_check(a, b, c, d, e, f):
 def hash_check(s):
     # encode string with 3 different has methods. Will return encoded string in hexadecimal form
     s = s.split(' ', 1)
+    hash_hex = None
     if s[0] == "SHA1":
-        return hashlib.sha1(s[1].encode()).hexdigest()
+        hash_hex = hashlib.sha1(s[1].encode()).hexdigest()
     elif s[0] == "MD5":
-        return hashlib.md5(s[1].encode()).hexdigest()
+        hash_hex = hashlib.md5(s[1].encode()).hexdigest()
     elif s[0] == "CRC32":
-        return hex(zlib.crc32(str.encode(s[1])))
+        hash_hex = format(zlib.crc32(str.encode(s[1])), 'x')
     else:
-        print("Hash method undefined")
-        return 0
+        return "Hash method undefined"
+    hash_int = int(hash_hex, 16)
+    hex_str = ' '.join(hash_hex[i:i+4] for i in range(0,len(hash_hex),4)) # add space every 4 hex digits
+    return "integer form | {}\nhexadecimal form | {}".format(hash_int, hex_str)
     
 ############################# IN PROGRESS #############################
     
