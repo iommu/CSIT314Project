@@ -53,6 +53,19 @@ class TestWA(unittest.TestCase):
         # example output "integer form | 1095738169\nhexadecimal form | 414f a339"
         # Test both equal
         self.assertEqual(result_test, result_wolf)
+    
+    # python main.py TestWA.test_truth_table
+    def test_truth_table(self):
+        # Generate random values
+        num_letters = generate.rand_int_range(1, 6)
+        num_letters = 3
+        logic = generate.rand_logic(num_letters)
+        query = generate.truth_table_gen(logic)
+        # Pass random values to known solution generator
+        result_test = test.truth_table_check(logic, num_letters)
+        result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Truth table")[0]['plaintext'].split('\n', 1)[1] # we don't care about first line
+        self.assertEqual(result_test, result_wolf)
 
     # python main.py TestWA.test_math
     def test_math(self):

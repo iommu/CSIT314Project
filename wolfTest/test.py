@@ -4,6 +4,7 @@
 # checks it against the api.py's output
 
 import math, hashlib, zlib
+import itertools
 from sympy import symbols, solve, factor
 from sympy.parsing.sympy_parser import (
     parse_expr,
@@ -74,21 +75,39 @@ def geometry_check(s):
         return x * 180 / math.pi
     return 0
 
-def truth_table_check(expr, inputs=2):
-    #assuming 2 variables p and q always (can change later)
+
+def truth_table_check(expr, num_letters):
+    letters = ['q', 'r', 's', 't', 'u', 'v']  # std array of logic letters
+    #assuming sequential variables
     expr = expr.lower()
-    expr = expr.replace("and","&")
-    expr = expr.replace("or","|")
-    expr = expr.replace("xor","^")
-    expr = expr.replace("not","~")
-    # create table string for comparison 
-    table = expr[0]+" | "+expr[-1]+" | "+expr
-    for p in range(0,inputs):
-        for q in range (0,inputs):
-            x = eval(expr)
-            # add results to table string, only add first character of result to match wolf
-            table+= "\n" +str(bool(p))[0] +" | "+str(bool(q))[0]+" | "+str(bool(x))[0]
-    return table
+    print(expr)
+    # replace names with expressions
+    expr = expr.replace("and", "&")
+    expr = expr.replace("xor", "^")
+    expr = expr.replace("or", "|")
+    expr = expr.replace("not", "~")
+    print(expr)
+    expr = parse_expr(expr)
+    print(expr)
+    # create table string for comparison
+    table = list(itertools.product([True, False], repeat=num_letters))
+    q, r, s, t, u, v = symbols('q,r,s,t,u,v')
+    # Go through each combo
+    output = ""
+    for row in table:
+        temp_out = ""
+        for index in range(num_letters):
+            temp_out += ('T' if row[index] == True else 'F')
+        temp_out += 'T' if expr.subs({
+            q: False if num_letters < 1 else row[0],
+            r: False if num_letters < 2 else row[1],
+            s: False if num_letters < 3 else row[2],
+            t: False if num_letters < 4 else row[3],
+            u: False if num_letters < 5 else row[4],
+            v: False if num_letters < 6 else row[5]}) else 'F'
+        temp_out = " | ".join(temp_out)
+        output += temp_out + "\n"
+    return output[:-1] # remove last '\n'
 
 # Formatters
 
