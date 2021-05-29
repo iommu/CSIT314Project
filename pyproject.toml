@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "csci314project"
+version = "0.1.0"
+description = "Group project for CSCI314"
+authors = ["Alex Carter <acarter010204@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+sympy = "^1.8"
+unittest = "^0.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
