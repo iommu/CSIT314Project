@@ -1,5 +1,5 @@
 import random
-import boolean
+#import boolean
 # This file generates a "random" string to passes it to the assert file
 
 ############################# WORKING #############################
@@ -81,6 +81,6 @@ def hash_gen():
             "CRC32 The quick brown fox jumps over the lazy dog",
         ])
 # Very simple equation 
-def sum(a, b):
+def sum_gen(a, b):
     return f"{a} + {b} "
 

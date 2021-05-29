@@ -76,7 +76,7 @@ class TestWA(unittest.TestCase):
         d = generate.rand_int_range(0, 100)
         # Pass random values to known solution generator
         result_test = test.math_check(a, b, c, d)
-        query = generate.test_gen(a, b, c, d)
+        query = generate.math_gen(a, b, c, d)
         result_wolf = self.api.search(query)
 
     # python main.py TestWA.test_factor
@@ -108,8 +108,8 @@ class TestWA(unittest.TestCase):
         b = generate.rand_int_range(0, 10)
         c = generate.rand_int_range(0, 10)
         d = generate.rand_int_range(0, 10)
-        result_test = test.solve_check(a)
-        query = generate.solve_gen()
+        result_test = test.solve_check(a, b, c, d)
+        query = generate.solve_gen(a, b, c, d)
         result_wolf = self.api.search(query)
     
     def test_sum(self):

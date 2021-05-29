@@ -24,7 +24,7 @@ def dob_check(name):
         "Harriet Tubman":"March 1822", 
         "Marvin Gaye":"Sunday, April 2, 1939",
         "Charlemagne":"747 AD",
-        "Galileo Galilei":"",
+        "Galileo Galilei":"Tuesday, February 15, 1564",
         "Warren Buffett":"Saturday, August 30, 1930",
         "Tom Hanks":"Monday, July 9, 1956",
         "Ferdinand Magellan":"1480",
@@ -68,8 +68,6 @@ def derivative_check(a, b, c):
     expr = a * x**4 + b * x**3 + c * x
     answer = diff(expr, x)
     return answer
-    
-############################# Should work #############################
 
 def deg2rad_check(degrees):
     radians = degrees * math.pi / 180
