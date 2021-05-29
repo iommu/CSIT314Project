@@ -20,8 +20,14 @@ from sympy.parsing.sympy_parser import (
 def dob_check(name):
     # Dict can be indexes by a string, i.e. the name in this case
     dob_dict = {
-        "Harriet Tubman": "March 1822",
-        "Marvin Gaye": "Sunday, April 2, 1939",
+        "Harriet Tubman":"March 1822", 
+        "Marvin Gaye":"Sunday, April 2, 1939",
+        "Charlemagne":"747 AD",
+        "Galileo Galilei":"",
+        "Warren Buffett":"Saturday, August 30, 1930",
+        "Tom Hanks":"Monday, July 9, 1956",
+        "Ferdinand Magellan":"1480",
+        "Wiley Post":"Tuesday, November 22, 1898"
     }
     return dob_dict[name]
 
@@ -57,22 +63,16 @@ def hash_check(s):
     return "integer form | {}\nhexadecimal form | {}".format(hash_int, hex_str)
     
 ############################# IN PROGRESS #############################
-    
-def geometry_check(s):
-    s = s.split()
-    if s[0] == "pi":
-        #print out pi to x digits
-        x = int(s[1])
-        return round(2*acos(0.0),x)
-    #check if converting to radians
-    elif s[0] == "convert" and s[4] == "radians":
-        x = float(s[1])
-        return x * math.pi/180
-    #check if converting to degrees
-    elif s[0] == "convert" and s[4] == "degrees":
-        x = float(s[1])
-        return x * 180 / math.pi
-    return 0
+
+def deg2rad_check(degrees):
+    radians = degrees * math.pi / 180
+    return radians
+
+def pie_check(length):
+    return round(2*acos(0.0),length)
+
+def sum_check(a, b):
+    return (a + b)
 
 def truth_table_check(expr, inputs=2):
     #assuming 2 variables p and q always (can change later)
