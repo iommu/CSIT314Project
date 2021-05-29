@@ -22,7 +22,7 @@ Meeting Minutes 29 April 2021
  Meeting Minutes 9 may 2021
 	
 	
-	• After discussing with the team, we decided to use a computational knowledge engine(Wolframe alpha) and using that vs python to validate the result.
+	• After discussing with the team, we decided to use a computational knowledge engine(Wolfram alpha) and using that vs python to validate the result.
 	• Breaking down the work structure as follows. 
         1.Component : Output checker
         2.Component : Random string generator
