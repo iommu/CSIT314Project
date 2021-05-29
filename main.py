@@ -80,16 +80,13 @@ class TestWA(unittest.TestCase):
         query = generate.factor_gen(a, b, c, d, e, f)
         result_wolf = self.api.search(query)
 
-    # python main.py TestWA.test_geometry
-    def test_geometry(self):
+    # python main.py TestWA.test_deg2rad
+    def test_deg2rad(self):
         # Generate random values
-        a = generate.rand_float_range(-50, 50)
-        result_test = test.gemotery_check(a)
+        deg = generate.rand_float_range(-180, 180)
+        result_test = test.deg2rad_check(a)
         query = generate.geometry_gen(a)
         result_wolf = self.api.search(query)
-
-
-
 
 if __name__ == "__main__":
     unittest.main()
