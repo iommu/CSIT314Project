@@ -4,7 +4,7 @@
 # checks it against the api.py's output
 
 import math, hashlib, zlib
-from sympy import symbols, solve, factor
+from sympy import symbols, solve, factor, diff
 from sympy.parsing.sympy_parser import (
     parse_expr,
     standard_transformations,
@@ -62,7 +62,7 @@ def hash_check(s):
     hex_str = ' '.join(hash_hex[i:i+4] for i in range(0,len(hash_hex),4)) # add space every 4 hex digits
     return "integer form | {}\nhexadecimal form | {}".format(hash_int, hex_str)
     
-############################# IN PROGRESS #############################
+############################# Should work #############################
 
 def deg2rad_check(degrees):
     radians = degrees * math.pi / 180
@@ -74,6 +74,20 @@ def pie_check(length):
 def sum_check(a, b):
     return (a + b)
 
+def derivative_check(a, b, c):
+    x = symbols("x")
+    expr = a * x**4 + b * x**3 + c * x
+    answer = diff(expr, x)
+    return answer
+
+############################# IN PROGRESS #############################
+
+def solve_check(a, b, c, d):
+    x = symbols("x")
+    eq1 = a * x**2 + b*x - c + d * x**3
+    answer = solve(eq1)
+    return answer
+
 def truth_table_check(expr, inputs=2):
     #assuming 2 variables p and q always (can change later)
     expr = expr.lower()
@@ -83,8 +97,8 @@ def truth_table_check(expr, inputs=2):
     expr = expr.replace("not","~")
     # create table string for comparison 
     table = expr[0]+" | "+expr[-1]+" | "+expr
-    for p in range(0,inputs):
-        for q in range (0,inputs):
+    for p in range(0,2):
+        for q in range (0,2):
             x = eval(expr)
             # add results to table string, only add first character of result to match wolf
             table+= "\n" +str(bool(p))[0] +" | "+str(bool(q))[0]+" | "+str(bool(x))[0]
