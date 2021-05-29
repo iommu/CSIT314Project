@@ -30,7 +30,6 @@ def rand_logic(letters_int):
     if letters_int > len(letters):
         raise RuntimeError('Too many letters, max {}'.format(len(letters)))
     output = ""
-    brackets = ""
     for letter in letters[:letters_int-1]:
         not_rand = random.choices(["not ",""], weights=[1,5], k=1)[0] # 1 in 5 chance for not
         output += f"{not_rand}{letter} {random.choice(logic)} ("
