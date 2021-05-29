@@ -19,6 +19,7 @@ def rand_name():
 def rand_int_range(start=0, end=200):
     return random.randint(start, end)
 
+# generate random float number for the geometry_gen
 def rand_float_range(start=-360, end=360):
     return round (random.uniform(start, end), 1)
 
@@ -50,6 +51,7 @@ def derivative_gen(a, b, c):
 def pie_gen(a):
     return "pi {} digits".format(a)
 
+    #checkes for the conversion of degree to radian
 def geometry_gen(a):
     return "convert {} degree to radian".format(a)
             
