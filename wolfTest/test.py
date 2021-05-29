@@ -62,6 +62,12 @@ def hash_check(s):
     hash_int = int(hash_hex, 16)
     hex_str = ' '.join(hash_hex[i:i+4] for i in range(0,len(hash_hex),4)) # add space every 4 hex digits
     return "integer form | {}\nhexadecimal form | {}".format(hash_int, hex_str)
+
+def derivative_check(a, b, c):
+    x = symbols("x")
+    expr = a * x**4 + b * x**3 + c * x
+    answer = diff(expr, x)
+    return answer
     
 ############################# Should work #############################
 
@@ -74,12 +80,6 @@ def pie_check(length):
 
 def sum_check(a, b):
     return (a + b)
-
-def derivative_check(a, b, c):
-    x = symbols("x")
-    expr = a * x**4 + b * x**3 + c * x
-    answer = diff(expr, x)
-    return answer
 
 ############################# IN PROGRESS #############################
 
