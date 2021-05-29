@@ -1,5 +1,5 @@
 import random
-#import boolean
+import boolean
 # This file generates a "random" string to passes it to the assert file
 
 ############################# WORKING #############################
@@ -81,6 +81,16 @@ def hash_gen():
             "CRC32 The quick brown fox jumps over the lazy dog",
         ])
 # Very simple equation 
-def sum_gen(a, b):
+def sum(a, b):
     return f"{a} + {b} "
+
+def get_random_string(length):
+    # With combination of upper case letter
+    result_str = ''.join(random.choice(string.ascii_uppercase) for i in range(length))
+    # print random string
+    print(result_str)
+
+# string of length 5
+get_random_string(5)
+get_random_string(5)
 
