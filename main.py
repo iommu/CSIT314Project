@@ -84,8 +84,8 @@ class TestWA(unittest.TestCase):
     def test_deg2rad(self):
         # Generate random values
         deg = generate.rand_float_range(-180, 180)
-        result_test = test.deg2rad_check()
-        query = generate.deg2rad_gen()
+        result_test = test.deg2rad_check(deg)
+        query = generate.deg2rad_gen(deg)
         result_wolf = self.api.search(query)
 
 if __name__ == "__main__":
