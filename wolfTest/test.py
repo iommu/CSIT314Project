@@ -12,6 +12,8 @@ from sympy.parsing.sympy_parser import (
     convert_xor,
 )
 
+############################# WORKING #############################
+
 # Solution generators
 
 
@@ -50,6 +52,8 @@ def hash_check(s):
     else:
         print("Hash method undefined")
         return 0
+    
+############################# IN PROGRESS #############################
     
 def geometry_check(s):
     s = s.split()

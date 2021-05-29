@@ -1,6 +1,8 @@
 import random
 # This file generates a "random" string to passes it to the assert file
 
+############################# WORKING #############################
+
 # Random generators
 def rand_name():
     return random.choice([
@@ -24,8 +26,8 @@ def dob_string_gen(name):
 def quadratic_gen(a, b, c):
     return "{}x^2 + {}x + {} = 0".format(a, b, c)
 
-##################################################################
-################## new case ######################################
+############################# IN PROGRESS #############################
+
  # same as what alex did. 
 def math_gen(a, b, c, d):
     return "({}+{}-{})/{}".format(a, b, c, d)
