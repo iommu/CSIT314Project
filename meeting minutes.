@@ -10,18 +10,19 @@ Meeting Minutes 29 April 2021
 	• listing out some of the project that could be done and programming language that can be used
 	• After discussing with the team, we decided to use python for our project.
 	• Looked at various projects that we could do that was inaccordance witht he project specification. some of them were
-        1. GCC, we can automatically/randomly create code, compile it, then check the outcome
-        2. Scipy, a python library of a bunch of math functions for python, we can reimplemented some functions ourself and check ours vs theirs
-        3. An online unit conversion webpage, we can test our conversions vs what the website says
-        4. OpenCV, library with a lot of image processing functions, we can Compare the output of OpenCV with a similar python library for image processing called Pillow
-	• Additional discussion about the above list of project.
+       			1. GCC, we can automatically/randomly create code, compile it, then check the outcome
+        		2. Scipy, a python library of a bunch of math functions for python, we can reimplemented some functions ourself and check ours vs theirs
+       			3. An online unit conversion webpage, we can test our conversions vs what the website says
+        		4. OpenCV, library with a lot of image processing functions, we can Compare the output of OpenCV with a similar python library for image processing called Pillow
+	• In depth discussion on pros and cons on above mentioned project 
+	• we decided to do an online unit conversion webpage, we can test our conversions vs what the website says.
+	
   
 	
  Meeting Minutes 9 may 2021
-
-	• In depth discussion on pros and cons on above mentioned project 
-	• comming to conclusion that the above listed project are not technically viable, thus again looking for some new project.
-	• After discussing with the team, we decided to use a  computational knowledge engine and using that vs python to validate the result.
+	
+	
+	• After discussing with the team, we decided to use a computational knowledge engine(Wolframe alpha) and using that vs python to validate the result.
 	• Breaking down the work structure as follows. 
         1.Component : Output checker
         2.Component : Random string generator
