@@ -19,6 +19,9 @@ def rand_name():
 def rand_int_range(start=0, end=200):
     return random.randint(start, end)
 
+def rand_float_range(start=-360, end=360):
+    return round (random.uniform(start, end), 1)
+
 # String generators
 def dob_string_gen(name):
     return "date of birth of {}".format(name)
@@ -44,8 +47,10 @@ def derivative_gen(a, b, c):
     return"d/dx {}x^4+{}x^3+{}x".format(a, b, c)
     
   #checks for the given digits of pi
-def geometry_gen(a=100,b=20,c=50):
+def pie_gen(a):
     return "pi {} digits".format(a)
+
+def geometry_gen(a):
     return "convert {} degree to radian".format(a)
             
 #works in similar way to the fist one"
