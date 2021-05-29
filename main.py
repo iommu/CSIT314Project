@@ -88,5 +88,17 @@ class TestWA(unittest.TestCase):
         query = generate.deg2rad_gen(deg)
         result_wolf = self.api.search(query)
 
+    # python main.pt TestWA.test_solve
+    def test_solve(self):
+        # Generate random values
+        a = generate.rand_int_range(0, 10)
+        b = generate.rand_int_range(0, 10)
+        c = generate.rand_int_range(0, 10)
+        d = generate.rand_int_range(0, 10)
+        result_test = test.solve_check(a)
+        query = generate.solve_gen()
+        result_wolf = self.api.search(query)
+
+
 if __name__ == "__main__":
     unittest.main()
