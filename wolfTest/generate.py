@@ -84,18 +84,28 @@ def hash_gen():
 def sum(a, b):
     return f"{a} + {b} "
 
-# String letter generation
-def get_random_string(length):
-    # With combination of upper case letter
-    result_str = ''.join(random.choice(string.ascii_uppercase) for i in range(length))
-    # print random string
-    print(result_str)
 
-# string of length 5
-get_random_string(5)
-get_random_string(5)
+def simple_gen_function(str_in, sep=""):
+    if sep == "":
+        yield str_in[0]
+        for c in str_in[1:]:
+            yield c
+    else:
+        return str_in
 
-# Random string of length 7
-result_str = ''.join((random.choice('abcdxyzpqr') for i in range(7)))
-print(result_str)
+def is_palindrome(num):
+    # Skip single-digit inputs
+    if num // 10 == 0:
+        return False
+    temp = num
+    reversed_num = 0
+
+    while temp != 0:
+        reversed_num = (reversed_num * 10) + (temp % 10)
+        temp = temp // 10
+
+    if num == reversed_num:
+        return num
+    else:
+        return False
 
