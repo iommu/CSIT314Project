@@ -156,3 +156,12 @@ def quaratic_format(unformatted):
         parse_expr(formatted[0], transformations=transformations),
         parse_expr(formatted[1], transformations=transformations),
     ]  # run parser
+
+def derivative_format(unformatted):
+    formatted = unformatted.split("=")[1] # remove the first part (it's basically the question)
+    formatted = formatted.replace("^", "**") # replace ^ with python power **
+    transformations = standard_transformations + (
+        implicit_multiplication,
+        convert_xor,
+    )  # setup variables for symbpy transformations
+    return parse_expr(formatted, transformations=transformations)
