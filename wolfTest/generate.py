@@ -84,6 +84,7 @@ def hash_gen():
 def sum(a, b):
     return f"{a} + {b} "
 
+# String letter generation
 def get_random_string(length):
     # With combination of upper case letter
     result_str = ''.join(random.choice(string.ascii_uppercase) for i in range(length))
@@ -93,4 +94,8 @@ def get_random_string(length):
 # string of length 5
 get_random_string(5)
 get_random_string(5)
+
+# Random string of length 7
+result_str = ''.join((random.choice('abcdxyzpqr') for i in range(7)))
+print(result_str)
 
