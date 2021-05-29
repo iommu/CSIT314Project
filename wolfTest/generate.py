@@ -23,6 +23,7 @@ def rand_int_range(start=0, end=200):
 # generate random float number for the geometry_gen
 def rand_float_range(start=-360, end=360):
     return round(random.uniform(start, end), 1)
+    
 
 def rand_logic(letters_int):
     letters = ['q', 'r', 's', 't', 'u', 'v'] # std array of logic letters
@@ -83,6 +84,16 @@ def hash_gen():
 # Very simple equation 
 def sum(a, b):
     return f"{a} + {b} "
+
+def dod_string_gen(name):
+    return "date of death of {}".format(name)
+
+def random_float_list = []
+# Set a length of the list to 10
+for i in range(0, 10):
+    # any random float between 50.50 to 500.50
+    x = round(random.uniform(50.50, 500.50), 2)
+    random_float_list.append(x)
 
 
 def simple_gen_function(str_in, sep=""):
