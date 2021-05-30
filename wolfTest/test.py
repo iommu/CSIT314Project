@@ -77,7 +77,7 @@ def pie_check(length):
     return round(2*acos(0.0),length)
 
 def sum_check(a, b):
-    return (a + b)
+    return float(a + b)
 
 ############################# IN PROGRESS #############################
 
