@@ -18,6 +18,14 @@ def rand_name():
             "Wiley Post"
         ])
 
+def rand_units():
+    temp = ["c", "f", "K"]
+    fluid = ["ml", "oz", "L", "gallon", "quart"]
+    dist = ["m", "cm", "inches", "feet", "km"]
+    
+    units = [temp, fluid, dist]
+    return random.choice(units)
+
 def rand_int_range(start=0, end=200):
     return random.randint(start, end)
 
