@@ -134,6 +134,6 @@ def double(L):
     return [x*2 for x in L]
 
 # Generate string for units conversion
-def convert_gen(number_units, units=rand_units()):
+def convert_units_gen(number_units, units=rand_units()):
     return f"convert {number_units} {random.choice(units)} to {random.choice(units)}"
 
