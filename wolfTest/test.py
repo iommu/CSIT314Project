@@ -124,36 +124,11 @@ def truth_table_check(expr, num_letters):
 # Formatters
 
 
-def quaratic_format(unformatted):
-    # unformatted =
-    # [
-    #     {
-    #         "plaintext": "x = 1/45 (-23 - 7 i sqrt(14))",
-    #         "title": ""
-    #     },
-    #     {
-    #         "plaintext": "x = 1/45 (-23 + 7 i sqrt(14))",
-    #         "title": ""
-    #     }
-    # ]
-    formatted = [
-        unformatted[0]["plaintext"][4:],
-        unformatted[1]["plaintext"][4:],
-    ]  # strip into array removing first 4 characters "x = "
-    # formatted = ['1/45 (-23 - 7 i sqrt(14))', '1/45 (-23 + 7 i sqrt(14))']
-    formatted = [
-        formatted[0].replace("i", "I"),
-        formatted[1].replace("i", "I"),
-    ]  # replace i with I because that's how sympy does irrational
-    # formatted = ['1/45 (-23 - 7 i sqrt(14))', '1/45 (-23 + 7 i sqrt(14))'] # doesn't matter for this eqn obviously
-    transformations = standard_transformations + (
-        implicit_multiplication,
-        convert_xor,
-    )  # setup variables for symbpy transformations
-    return [
-        parse_expr(formatted[0], transformations=transformations),
-        parse_expr(formatted[1], transformations=transformations),
-    ]  # run parser
+def sympy_list_format(unformatted):
+    formatted = []
+    for item in unformatted:
+        formatted.append(item.replace("i", "I")) # replace i with I because that's how sympy does irrational
+    return [ sympy_format(item) for item in formatted ] # run parser
 
 def sympy_format(unformatted):
     formatted = unformatted.replace("^", "**") # replace ^ with python power **

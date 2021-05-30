@@ -31,11 +31,12 @@ class TestWA(unittest.TestCase):
         result_test = test.quadratic_check(a, b, c)
         # Pass random values to random string generator and then to search query and the trim returned JSON into final string
         query = generate.quadratic_gen(a, b, c)
-        result_wolf = self.api.search(query)
-        result_wolf = self.api.get_pod(result_wolf, "Complex solutions")
+        result_wolf_json = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf_json, "Complex solutions")
         if result_wolf == None:  # sometimes results is not complex
-            result_wolf = self.api.get_pod(result_wolf, "Solutions")
-        result_wolf = test.quaratic_format(result_wolf)
+            result_wolf = self.api.get_pod(result_wolf_json, "Solutions")
+        result_wolf = [index['plaintext'].split("=")[1] for index in result_wolf]
+        result_wolf = test.sympy_list_format(result_wolf)
         # Test both equal
         same = True
         for index in range(2):
@@ -119,7 +120,19 @@ class TestWA(unittest.TestCase):
         d = generate.rand_int_range(0, 10)
         result_test = test.solve_check(a, b, c, d)
         query = generate.solve_gen(a, b, c, d)
+        print(query)
         result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Results")
+        result_wolf = [index['plaintext'].split("=")[1] for index in result_wolf]
+        print(result_test)
+        print(result_wolf)
+        # Test all equal
+        same = True
+        for index in range(len(result_wolf)):
+            same = simplify(result_test[index] - result_wolf[index]) == 0
+            if same == False:
+                break
+        self.assertTrue(same)
     
     def test_sum(self):
         # Generate random values
