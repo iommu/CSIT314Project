@@ -12,7 +12,7 @@ from sympy.parsing.sympy_parser import (
     implicit_multiplication,
     convert_xor,
 )
-
+from mpmath import mp
 ############################# WORKING #############################
 
 # Solution generators
@@ -74,7 +74,8 @@ def deg2rad_check(degrees):
     return radians
 
 def pie_check(length):
-    return round(2*acos(0.0),length)
+    mp.dps = length
+    return float(str(mp.pi))
 
 def sum_check(a, b):
     return float(a + b)
