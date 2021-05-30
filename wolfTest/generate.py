@@ -1,5 +1,6 @@
 import random
 import boolean
+from random_word import RandomWords
 # This file generates a "random" string to passes it to the assert file
 
 ############################# WORKING #############################
@@ -23,7 +24,14 @@ def rand_int_range(start=0, end=200):
 # generate random float number for the geometry_gen
 def rand_float_range(start=-360, end=360):
     return round(random.uniform(start, end), 1)
-    
+
+def rand_word_sentence(length=10):
+    r = RandomWords()
+    words = r.get_random_words(limit=10)
+    sentence = ""
+    for word in words:
+        sentence += f" {word}"
+    return sentence
 
 def rand_logic(letters_int):
     letters = ['q', 'r', 's', 't', 'u', 'v'] # std array of logic letters
@@ -74,13 +82,10 @@ def deg2rad_gen(a):
     return "convert {} degree to radian".format(a)
             
 #works in similar way to the fist one"
-# /
-def hash_gen():
-    return random.choice([
-            "SHA1 Hi, i love computer science",
-            "MD5 HELLO THERE I AM MD5!",
-            "CRC32 The quick brown fox jumps over the lazy dog",
-        ])
+def hash_gen(sentence):
+    hash_type = random.choice(["SHA1", "MD5", "CRC32"])
+    return f"{hash_type}{sentence}"
+
 # Very simple equation 
 def sum_gen(a, b):
     return f"sum of {a} + {b} "

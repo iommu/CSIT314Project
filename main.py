@@ -47,7 +47,9 @@ class TestWA(unittest.TestCase):
     
     # python main.py TestWA.test_hash
     def test_hash(self):
-        query = generate.hash_gen() # should have input for random string
+        # Get random sentence
+        sentence = generate.rand_word_sentence(10)
+        query = generate.hash_gen(sentence)
         result_test = test.hash_check(query)
         result_wolf = self.api.search(query)
         result_wolf = self.api.get_pod(result_wolf, "Message digest")[0]['plaintext']
