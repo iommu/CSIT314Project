@@ -24,7 +24,7 @@ def rand_units():
     dist = ["m", "cm", "inches", "feet", "km"]
     time = ["day", "hour", "minutes", "seconds"]
     area = ["m^2", "daa", "a", "km^2", "hectare"]
-    units = [temp, fluid, dist, time, area]
+    units = [temp, volume, dist, time, area]
     return random.choice(units)
 
 def rand_int_range(start=0, end=200):
