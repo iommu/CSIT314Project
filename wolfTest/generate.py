@@ -82,8 +82,8 @@ def hash_gen():
             "CRC32 The quick brown fox jumps over the lazy dog",
         ])
 # Very simple equation 
-def sum(a, b):
-    return f"{a} + {b} "
+def sum_gen(a, b):
+    return f"sum of {a} + {b} "
 
 def dod_string_gen(name):
     return "date of death of {}".format(name)

@@ -134,13 +134,17 @@ class TestWA(unittest.TestCase):
                 break
         self.assertTrue(same)
     
+    # python main.py TestWA.test_sum
     def test_sum(self):
         # Generate random values
-        a = generate.rand_int_range(0, 100)
-        b = generate.rand_int_range(0, 100)
+        a = generate.rand_float_range()
+        b = generate.rand_float_range()
         result_test = test.sum_check(a, b)
         query = generate.sum_gen(a, b)
         result_wolf = self.api.search(query)
+        result_wolf = float(self.api.get_pod(result_wolf, "Result")[0]['plaintext'])
+        min_deci = len(str(result_wolf).split('.')[1]) if len(str(result_wolf).split('.')[1]) < len(str(result_test).split('.')[1]) else len(str(result_test).split('.')[1])
+        self.assertEqual(f'%.{min_deci}f' % result_test, f'%.{min_deci}f' % result_wolf)
 
     def test_derivative(self):
         # Generate random values
