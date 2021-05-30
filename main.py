@@ -95,6 +95,9 @@ class TestWA(unittest.TestCase):
         result_test = test.factor_check(a, b, c, d, e, f)
         query = generate.factor_gen(a, b, c, d, e, f)
         result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Result")[0]['plaintext']
+        result_wolf = test.sympy_format(result_wolf)
+        self.assertTrue(simplify(result_test - result_wolf) == 0)
 
     # python main.py TestWA.test_deg2rad
     def test_deg2rad(self):
