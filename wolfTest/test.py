@@ -5,7 +5,7 @@
 
 import math, hashlib, zlib
 import itertools
-from sympy import symbols, solve, factor, diff
+from sympy import symbols, solve, factor, diff, simplify
 from sympy.parsing.sympy_parser import (
     parse_expr,
     standard_transformations,
@@ -137,3 +137,9 @@ def sympy_format(unformatted):
         convert_xor,
     )  # setup variables for symbpy transformations
     return parse_expr(formatted, transformations=transformations)
+
+def sympy_list_sort(unsorted):
+    def key_func(sympy_data):
+        return float(simplify(sympy_data).as_real_imag()[0]) + float(simplify(sympy_data).as_real_imag()[1])
+    unsorted.sort(key=key_func)
+    return unsorted
