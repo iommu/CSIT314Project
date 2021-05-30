@@ -156,7 +156,7 @@ def quaratic_format(unformatted):
     ]  # run parser
 
 def sympy_format(unformatted):
-    formatted = formatted.replace("^", "**") # replace ^ with python power **
+    formatted = unformatted.replace("^", "**") # replace ^ with python power **
     transformations = standard_transformations + (
         implicit_multiplication,
         convert_xor,
