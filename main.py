@@ -170,7 +170,9 @@ class TestWA(unittest.TestCase):
         result_wolf = self.api.search(query)
         result_wolf = float(self.api.get_pod(result_wolf, "Result")[0]['plaintext'])
         self.assertEqual(result_test, result_wolf)
-        
+  
+
+####################IN PROGRESS###################
     # python main.py TestWA.test_convert
     def test_convert_units(self):
         # Generate random values
