@@ -110,7 +110,7 @@ class TestWA(unittest.TestCase):
         result_wolf = float(result_wolf.split()[0]) # remove "radians" text
         self.assertTrue(abs(result_test - result_wolf) < 0.01)
 
-    # python main.pt TestWA.test_solve
+    # python main.py TestWA.test_solve
     def test_solve(self):
         # Generate random values
         a = generate.rand_int_range(0, 10)
