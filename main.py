@@ -120,12 +120,12 @@ class TestWA(unittest.TestCase):
         d = generate.rand_int_range(0, 10)
         result_test = test.solve_check(a, b, c, d)
         query = generate.solve_gen(a, b, c, d)
-        print(query)
         result_wolf = self.api.search(query)
         result_wolf = self.api.get_pod(result_wolf, "Results")
         result_wolf = [index['plaintext'].split("=")[1] for index in result_wolf]
-        print(result_test)
-        print(result_wolf)
+        result_wolf = test.sympy_list_format(result_wolf)
+        result_test = test.sympy_list_sort(result_test)
+        result_wolf = test.sympy_list_sort(result_wolf)
         # Test all equal
         same = True
         for index in range(len(result_wolf)):
