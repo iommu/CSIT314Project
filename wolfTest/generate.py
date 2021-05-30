@@ -56,7 +56,7 @@ def math_gen(a, b, c, d):
     
     # very similar to quadratic
 def solve_gen(a, b, c, d):
-    return "{}x^2 + {}x = {} - {}x^3".format(a, b, c, d)
+    return "solve {}x^2 + {}x = {} - {}x^3".format(a, b, c, d)
  
 def factor_gen(a, b, c, d, e, f):    
     return "factor {}x^5 - {}x^4 + {}x^4 - {}x^2 + {}x^3 - {}".format(a, b, c, d, e, f)
