@@ -172,8 +172,12 @@ class TestWA(unittest.TestCase):
         self.assertEqual(result_test, result_wolf)
         
     # python main.py TestWA.test_convert
-    def test_convert(self):
+    def test_convert_units(self):
         # Generate random values
+        number_units = generate.rand_float_range(100, 100)
+        result_test = test.convert_check(number_units)
+        query = generate.convert_units_gen(number_units)
+        result_wolf = self.api.search(query)
         
 
 if __name__ == "__main__":
