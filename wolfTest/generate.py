@@ -20,10 +20,11 @@ def rand_name():
 
 def rand_units():
     temp = ["c", "f", "K"]
-    fluid = ["ml", "oz", "L", "gallon", "quart"]
+    volume = ["ml", "oz", "L", "gallon", "quart"]
     dist = ["m", "cm", "inches", "feet", "km"]
-    
-    units = [temp, fluid, dist]
+    time = ["day", "hour", "minutes", "seconds"]
+    area = ["m^2", "daa", "a", "km^2", "hectare"]
+    units = [temp, fluid, dist, time, area]
     return random.choice(units)
 
 def rand_int_range(start=0, end=200):
@@ -131,4 +132,8 @@ def is_palindrome(num):
     
 def double(L):
     return [x*2 for x in L]
+
+# Generate string for units conversion
+def convert_gen(number_units, units=rand_units()):
+    return f"convert {number_units} {random.choice(units)} to {random.choice(units)}"
 
