@@ -88,13 +88,9 @@ def sum(a, b):
 def dod_string_gen(name):
     return "date of death of {}".format(name)
 
-def random_float_list = []
-# Set a length of the list to 10
-for i in range(0, 10):
+def random_float_list(length=10, start=50.50, end=500.50):
     # any random float between 50.50 to 500.50
-    x = round(random.uniform(50.50, 500.50), 2)
-    random_float_list.append(x)
-
+    return [random.uniform(start, end) for index in range(length)]
 
 def simple_gen_function(str_in, sep=""):
     if sep == "":
