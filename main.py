@@ -158,7 +158,16 @@ class TestWA(unittest.TestCase):
         result_wolf = self.api.get_pod(result_wolf, "Derivative")[0]['plaintext']
         result_wolf = test.sympy_format(result_wolf.split("=")[1])
         self.assertTrue(simplify(result_test - result_wolf) == 0)
-
+    
+    # python main.py TestWA.test_sum
+    def test_pi_deci(self):
+        # Generate random values
+        length = generate.rand_int_range(1,500)
+        result_test = test.pi_check(length)
+        query = generate.pi_gen(length)
+        result_wolf = self.api.search(query)
+        result_wolf = float(self.api.get_pod(result_wolf, "Result")[0]['plaintext'])
+        self.assertEqual(result_test, result_wolf)
 
 if __name__ == "__main__":
     unittest.main()

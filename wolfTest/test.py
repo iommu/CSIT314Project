@@ -73,7 +73,7 @@ def deg2rad_check(degrees):
     radians = degrees * math.pi / 180
     return radians
 
-def pie_check(length):
+def pi_check(length):
     mp.dps = length
     return float(str(mp.pi))
 

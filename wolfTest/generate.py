@@ -65,9 +65,9 @@ def factor_gen(a, b, c, d, e, f):
 def derivative_gen(a, b, c):
     return"d/dx {}x^4+{}x^3+{}x".format(a, b, c)
     
-  #checks for the given digits of pi
-def pie_gen(a):
-    return "pi {} digits".format(a)
+#checks for the given digits of pi
+def pi_gen(length):
+    return "pi {} digits".format(length)
 
     #checkes for the conversion of degree to radian
 def deg2rad_gen(a):
