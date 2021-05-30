@@ -106,6 +106,9 @@ class TestWA(unittest.TestCase):
         result_test = test.deg2rad_check(deg)
         query = generate.deg2rad_gen(deg)
         result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Result")[0]['plaintext']
+        result_wolf = float(result_wolf.split()[0]) # remove "radians" text
+        self.assertTrue(abs(result_test - result_wolf) < 0.01)
 
     # python main.pt TestWA.test_solve
     def test_solve(self):
