@@ -146,6 +146,7 @@ class TestWA(unittest.TestCase):
         min_deci = len(str(result_wolf).split('.')[1]) if len(str(result_wolf).split('.')[1]) < len(str(result_test).split('.')[1]) else len(str(result_test).split('.')[1])
         self.assertEqual(f'%.{min_deci}f' % result_test, f'%.{min_deci}f' % result_wolf)
 
+    # python main.py TestWA.test_derivative
     def test_derivative(self):
         # Generate random values
         a = generate.rand_int_range(0, 10)
