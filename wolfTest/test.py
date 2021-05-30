@@ -155,7 +155,7 @@ def quaratic_format(unformatted):
         parse_expr(formatted[1], transformations=transformations),
     ]  # run parser
 
-def derivative_format(unformatted):
+def sympy_format(unformatted):
     formatted = unformatted.split("=")[1] # remove the first part (it's basically the question)
     formatted = formatted.replace("^", "**") # replace ^ with python power **
     transformations = standard_transformations + (

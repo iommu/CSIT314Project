@@ -132,7 +132,7 @@ class TestWA(unittest.TestCase):
         query = generate.derivative_gen(a, b, c)
         result_wolf = self.api.search(query)
         result_wolf = self.api.get_pod(result_wolf, "Derivative")[0]['plaintext']
-        result_wolf = test.derivative_format(result_wolf)
+        result_wolf = test.sympy_format(result_wolf)
         self.assertTrue(simplify(result_test - result_wolf) == 0)
 
 
