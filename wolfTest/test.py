@@ -92,15 +92,12 @@ def truth_table_check(expr, num_letters):
     letters = ['q', 'r', 's', 't', 'u', 'v']  # std array of logic letters
     #assuming sequential variables
     expr = expr.lower()
-    print(expr)
     # replace names with expressions
     expr = expr.replace("and", "&")
     expr = expr.replace("xor", "^")
     expr = expr.replace("or", "|")
     expr = expr.replace("not", "~")
-    print(expr)
     expr = parse_expr(expr)
-    print(expr)
     # create table string for comparison
     table = list(itertools.product([True, False], repeat=num_letters))
     q, r, s, t, u, v = symbols('q,r,s,t,u,v')
