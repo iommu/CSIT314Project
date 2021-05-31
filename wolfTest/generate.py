@@ -139,6 +139,7 @@ def double(L):
 
 # Generate string for units conversion
 def convert_units_gen(number_units, units=rand_units()):
+    # used alex code to fix 
     choice_1 = random.choice(units)
     choice_2 = choice_1
     while  choice_1 == choice_2:
