@@ -21,7 +21,7 @@ def rand_name():
 def rand_units():
     temp = ["c", "f", "K"]
     volume = ["mL", "oz", "L", "gallon", "quart"]
-    dist = ["m", "cm", "inches", "feet", "km"]
+    dist = ["m", "cm", "inch", "feet", "km"]
     time = ["day", "hour", "minutes", "seconds"]
     area = ["m^2", "acre", "mi^2", "km^2", "hectare"]
     units = [temp, volume, dist, time, area]
@@ -135,5 +135,9 @@ def double(L):
 
 # Generate string for units conversion
 def convert_units_gen(number_units, units=rand_units()):
-    return f"convert {number_units} {random.choice(units)} to {random.choice(units)}"
+    choice_1 = random.choice(units)
+    choice_2 = choice_1
+    while  choice_1 == choice_2:
+        choice_2 = random.choice(units)
+    return f"convert {number_units} {choice_1} to {choice_2}"
 
