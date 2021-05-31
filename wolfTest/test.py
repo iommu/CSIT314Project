@@ -17,8 +17,9 @@ from sympy.parsing.sympy_parser import (
 from mpmath import mp
 import pint
 
+#
 # Solution generators
-
+#
 
 def dob_check(name):
     # Dict can be indexes by a string, i.e. the name in this case
@@ -94,7 +95,6 @@ def sum_check(a, b):
 def volume_food_check(volume, food_unit):
     return ("calories in " + str(volume) + food_unit)
 
-############################# IN PROGRESS #############################
 
 def solve_check(a, b, c, d):
     x = symbols("x")
@@ -104,7 +104,6 @@ def solve_check(a, b, c, d):
 
 
 def truth_table_check(expr, num_letters):
-    letters = ['q', 'r', 's', 't', 'u', 'v']  # std array of logic letters
     # assuming sequential variables
     expr = expr.lower()
     # replace names with expressions
@@ -157,8 +156,9 @@ def units_check(query):
             break
     return Q_(num, unit_type[unit_1]).to(unit_type[unit_2]).magnitude
 
+#
 # Formatters
-
+#
 
 def py_format(unformatted):
     unformatted = unformatted.replace("×", "*")

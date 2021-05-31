@@ -1,11 +1,10 @@
+# This file generates a "random" string to passes it to the assert file
 import random
 from random_word import RandomWords
-# This file generates a "random" string to passes it to the assert file
 
-############################# WORKING #############################
-
+#
 # Random generators
-
+#
 
 def rand_name():
     return random.choice([
@@ -34,8 +33,6 @@ def rand_int_range(start=0, end=200):
     return random.randint(start, end)
 
 # generate random float number for the geometry_gen
-
-
 def rand_float_range(start=-360, end=360):
     return round(random.uniform(start, end), 1)
 
@@ -62,7 +59,10 @@ def rand_logic(letters_int):
     output += ")"*(letters_int-1)
     return output
 
+
+#
 # String generators
+#
 
 
 def dob_string_gen(name):
@@ -81,17 +81,11 @@ def rand_food_unit():
     food = ["ml coffee", "L milk", "kg lettuce"]
     return random.choice(food)
 
-############################# IN PROGRESS #############################
-
- # same as what alex did.
-
 
 def math_gen(a, b, c, d):
     return "({}+{}-{})/{}".format(a, b, c, d)
 
-    # very similar to quadratic
-
-
+# very similar to quadratic
 def solve_gen(a, b, c, d):
     return "solve {}x^2 + {}x = {} - {}x^3".format(a, b, c, d)
 
@@ -99,34 +93,24 @@ def solve_gen(a, b, c, d):
 def factor_gen(a, b, c, d, e, f):
     return "factor {}x^5 - {}x^4 + {}x^4 - {}x^2 + {}x^3 - {}".format(a, b, c, d, e, f)
 
-# this might be a bit difficult. try it if u can otherwise just leave it.
-
 
 def derivative_gen(a, b, c):
     return"d/dx {}x^4+{}x^3+{}x".format(a, b, c)
 
 # checks for the given digits of pi
-
-
 def pi_gen(length):
     return "pi {} digits".format(length)
 
-    # checkes for the conversion of degree to radian
-
-
+# checkes for the conversion of degree to radian
 def deg2rad_gen(a):
     return "convert {} degree to radian".format(a)
 
 # works in similar way to the fist one"
-
-
 def hash_gen(sentence):
     hash_type = random.choice(["SHA1", "MD5", "CRC32"])
     return f"{hash_type}{sentence}"
 
 # Very simple equation
-
-
 def sum_gen(a, b):
     return f"sum of {a} + {b} "
 
@@ -164,12 +148,6 @@ def is_palindrome(num):
         return num
     else:
         return False
-
-
-def double(L):
-    return [x*2 for x in L]
-
-# Generate string for units conversion
 
 
 def convert_units_gen(number_units, units=rand_units()):

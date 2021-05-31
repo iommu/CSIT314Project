@@ -1,3 +1,4 @@
+# This code connects to the WolframAlpha API
 import requests
 import os
 import urllib.parse

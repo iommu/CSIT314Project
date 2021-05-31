@@ -1,3 +1,4 @@
+# This code handles all checks
 from wolfTest import generate, test, api
 import unittest
 from sympy import simplify
