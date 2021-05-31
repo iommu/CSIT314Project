@@ -1,2 +1,2 @@
-# CSCI314Project
-CSCI314 Project
+# CSIT314Project
+CSIT314 Project
