@@ -177,6 +177,7 @@ class TestWA(unittest.TestCase):
         volume = generate.rand_int_range(0,200)
         result_test = test.volume_food_check(volume, food_unit)
         print(result_test)
+        query = generate.volume_food_gen(volume, food_unit)
 
 ####################IN PROGRESS###################
     # python main.py TestWA.test_convert
