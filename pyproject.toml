@@ -8,6 +8,9 @@ authors = ["Alex Carter <acarter010204@gmail.com>"]
 python = "^3.7"
 sympy = "^1.8"
 unittest = "^0.0"
+html-testRunner = "^1.2.1"
+Pint = "^0.17"
+Random-Word = "^1.0.7"
 
 [tool.poetry.dev-dependencies]
 
