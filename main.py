@@ -172,14 +172,18 @@ class TestWA(unittest.TestCase):
         self.assertEqual(result_test, result_wolf)
   
 
-####################IN PROGRESS###################
-    # python main.py TestWA.test_convert
+    # python main.py TestWA.test_convert_units
     def test_convert_units(self):
         # Generate random values
-        number_units = generate.rand_float_range(100, 100)
-        result_test = test.convert_check(number_units)
-        query = generate.convert_units_gen(number_units)
+        number_units = generate.rand_float_range(1, 200)
+        units = generate.rand_units()
+        query = generate.convert_units_gen(number_units, units)
+        result_test = test.units_check(query)
         result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Result")[0]['plaintext']
+        result_wolf = test.py_format(result_wolf.split(" ")[0])
+        min_deci = len(str(result_wolf).split('.')[1]) if len(str(result_wolf).split('.')[1]) < len(str(result_test).split('.')[1]) else len(str(result_test).split('.')[1])
+        self.assertEqual(f'%.{min_deci}f' % result_test, f'%.{min_deci}f' % result_wolf)
         
 
 if __name__ == "__main__":
