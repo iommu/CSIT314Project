@@ -1,5 +1,4 @@
 import random
-import boolean
 from random_word import RandomWords
 # This file generates a "random" string to passes it to the assert file
 
@@ -36,10 +35,9 @@ def rand_float_range(start=-360, end=360):
 
 def rand_word_sentence(length=10):
     r = RandomWords()
-    words = r.get_random_words(limit=10)
     sentence = ""
-    for word in words:
-        sentence += f" {word}"
+    for _ in range(length):
+        sentence += f" {r.get_random_word()}"
     return sentence
 
 def rand_logic(letters_int):
