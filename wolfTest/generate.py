@@ -20,7 +20,7 @@ def rand_name():
 
 def rand_units():
     temp = ["c", "f", "K"]
-    volume = ["mL", "oz", "L", "gallon", "quart"]
+    volume = ["ml", "oz", "L", "gallon", "quart"]
     dist = ["m", "cm", "inches", "feet", "km"]
     time = ["day", "hour", "minutes", "seconds"]
     area = ["m^2", "daa", "mi^2", "km^2", "hectare"]
@@ -64,6 +64,10 @@ def quadratic_gen(a, b, c):
 
 def truth_table_gen(logic):
     return "truth table {}".format(logic)
+
+def rand_food_unit():
+    food= ["ml coffee", "L milk", "kg lettuce"]
+    return random.choice(food)
 
 ############################# IN PROGRESS #############################
 
