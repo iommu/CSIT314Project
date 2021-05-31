@@ -5,6 +5,7 @@ import urllib.parse
 # Code writen by Alex Carter from tutorial
 # https://towardsdatascience.com/build-your-next-project-with-wolfram-alpha-api-and-python-51c2c361d8b9
 
+
 class Wolframalpha:
     def __init__(self):
         self.app_id = "48GAJ6-6526YPQVE9"
