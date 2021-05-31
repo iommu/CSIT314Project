@@ -20,7 +20,7 @@ def rand_name():
 
 def rand_units():
     temp = ["c", "f", "K"]
-    volume = ["ml", "oz", "L", "gallon", "quart"]
+    volume = ["mL", "oz", "L", "gallon", "quart"]
     dist = ["m", "cm", "inches", "feet", "km"]
     time = ["day", "hour", "minutes", "seconds"]
     area = ["m^2", "daa", "mi^2", "km^2", "hectare"]
