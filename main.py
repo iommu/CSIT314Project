@@ -174,6 +174,7 @@ class TestWA(unittest.TestCase):
     def test_nutrition(self):
         #generate random food and unit
         food_unit = generate.rand_food_unit()
+        volume = generate.rand_int_range(0,200)
         print(food_unit)
 
 ####################IN PROGRESS###################
