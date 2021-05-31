@@ -142,4 +142,4 @@ def convert_units_gen(number_units, units=rand_units()):
     return f"convert {number_units} {random.choice(units)} to {random.choice(units)}"
 
 def volume_food_gen(volume, food_unit):
-    return ("calories in " + str(volume) + food_unit)
+    return "calories in  {} {}".format(volume,food_unit)
