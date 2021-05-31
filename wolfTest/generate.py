@@ -23,7 +23,7 @@ def rand_units():
     volume = ["mL", "oz", "L", "gallon", "quart"]
     dist = ["m", "cm", "inches", "feet", "km"]
     time = ["day", "hour", "minutes", "seconds"]
-    area = ["m^2", "daa", "mi^2", "km^2", "hectare"]
+    area = ["m^2", "acre", "mi^2", "km^2", "hectare"]
     units = [temp, volume, dist, time, area]
     return random.choice(units)
 
