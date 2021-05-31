@@ -171,6 +171,10 @@ class TestWA(unittest.TestCase):
         result_wolf = float(self.api.get_pod(result_wolf, "Result")[0]['plaintext'])
         self.assertEqual(result_test, result_wolf)
   
+    def test_nutrition(self):
+        #generate random food and unit
+        food_unit = generate.rand_food_unit()
+        print(food_unit)
 
 ####################IN PROGRESS###################
     # python main.py TestWA.test_convert
