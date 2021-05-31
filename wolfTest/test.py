@@ -91,6 +91,10 @@ def pi_check(length):
 def sum_check(a, b):
     return float(a + b)
 
+def volume_food_check(volume, food_unit):
+    return ("calories in " + str(volume) + food_unit)
+
+############################# IN PROGRESS #############################
 
 def solve_check(a, b, c, d):
     x = symbols("x")

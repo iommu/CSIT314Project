@@ -171,6 +171,17 @@ class TestWA(unittest.TestCase):
         result_wolf = float(self.api.get_pod(result_wolf, "Result")[0]['plaintext'])
         self.assertEqual(result_test, result_wolf)
   
+    def test_nutrition(self):
+        #generate random food and unit
+        food_unit = generate.rand_food_unit()
+        volume = generate.rand_int_range(0,200)
+        result_test = test.volume_food_check(volume, food_unit)
+        #print(result_test)
+        query = generate.volume_food_gen(volume, food_unit)
+        result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Average result")
+        print(result_wolf)
+        
 
     # python main.py TestWA.test_convert_units
     def test_convert_units(self):

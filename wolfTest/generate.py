@@ -65,6 +65,10 @@ def quadratic_gen(a, b, c):
 def truth_table_gen(logic):
     return "truth table {}".format(logic)
 
+def rand_food_unit():
+    food= ["ml coffee", "L milk", "kg lettuce"]
+    return random.choice(food)
+
 ############################# IN PROGRESS #############################
 
  # same as what alex did. 
@@ -141,3 +145,5 @@ def convert_units_gen(number_units, units=rand_units()):
         choice_2 = random.choice(units)
     return f"convert {number_units} {choice_1} to {choice_2}"
 
+def volume_food_gen(volume, food_unit):
+    return "calories in  {} {}".format(volume,food_unit)
