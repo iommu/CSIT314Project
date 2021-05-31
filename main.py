@@ -176,8 +176,12 @@ class TestWA(unittest.TestCase):
         food_unit = generate.rand_food_unit()
         volume = generate.rand_int_range(0,200)
         result_test = test.volume_food_check(volume, food_unit)
-        print(result_test)
+        #print(result_test)
         query = generate.volume_food_gen(volume, food_unit)
+        result_wolf = self.api.search(query)
+        result_wolf = self.api.get_pod(result_wolf, "Average result")
+        print(result_wolf)
+        
 
 ####################IN PROGRESS###################
     # python main.py TestWA.test_convert
